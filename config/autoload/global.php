@@ -11,6 +11,25 @@
  * file.
  */
 
-return [
-    // ...
-];
+ return [
+     'db' => [
+         'driver' => 'Pdo_Mysql',
+         'host' => 'localhost',
+         'database' => 'zf3_helpdesk',
+         'username' => 'root',
+         'password' => ''
+     ],
+     'mail' => [
+         'name' => 'smtp.mailtrap.io', #SMTP do servidor de e-mail
+         'host' => 'smtp.mailtrap.io', #No google só repetir o SMTP
+         'port' => 2525, #Porta do servidor de e-mail Gmail 465
+         'connection_class' => 'login', #Diz que será feito uma autenticação para disparar os e-mail
+         'connection_config' => [
+             'from' => 'zf3napratica@teste.com', # DE!
+             'username' => 'ec1cd83955fafa', #E-Mail de autenticação
+             'password' => '7b7034d178c9ce', #Senha do e-mail para autenticar
+             //'ssl' => 'ssl', #Tipo do envio ssl => ssl para Gmail
+             'auth' => 'CRAM-MD5',
+         ],
+     ],
+ ];
